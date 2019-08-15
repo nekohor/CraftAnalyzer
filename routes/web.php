@@ -9,8 +9,14 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'WelcomeController@index');
+
+Route::get('/s', function () {
+    return "samples";
 });
+
+Route::get('/upload-unstables', 'DataUploadController@uploadUnstables');
+
+Route::get('/t', 'TestPondController@testPond');
