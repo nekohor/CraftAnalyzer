@@ -18,4 +18,6 @@ Route::group([
     $router->get('chartjs', 'ChartjsController@index');
     $router->get('review', 'HotRollReviewController@index');
 
+    $router->get('pond', "PondReviewController@index");
+
 });

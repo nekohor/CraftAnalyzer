@@ -21,6 +21,8 @@ class HotRollReviewController extends Controller
     public function index(Content $content)
     {
         $this->ponder = new Ponder();
+
+
         return $content
             ->header(__("hotroll.review"))
             ->row(
@@ -43,18 +45,16 @@ class HotRollReviewController extends Controller
                      $echarts = (new Echarts('', ''))
                                  ->setData($jsonArr)
                                  ->bindLegend($head);
-                     $row->column(4, new Box('toolbox', $echarts));
+                     $row->column(4, new Box('test', $echarts));
                  }
             )->row(
                 function (Row $row) {
                     $bar = view('hotroll.tool-box');
-
                     $row->column(12, new Box('操作面板', $bar));
                 }
             )->row(function (Row $row) {
 
-                $bar = view('hotroll.fm-stand');
-                $row->column(1/3, new Box('F1', $bar));
+                $this->addPlotCard(1, $row);
 
                 $scatter = view('admin.chartjs.scatter');
                 $row->column(1/3, new Box('F2', $scatter));
@@ -88,4 +88,13 @@ class HotRollReviewController extends Controller
 
         return new Callout($content, $title, 'info');
     }
+
+    protected function addPlotCard($stdNum, Row $row)
+    {
+        $std = strval($stdNum);
+        $title = "F".$std;
+        $plotCardView = view('hotroll.fm-stand');
+        $row->column(1/3, new Box($title, $plotCardView));
+    }
+
 }

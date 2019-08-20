@@ -21,7 +21,7 @@ $(function () {
         data: {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
             datasets: [{
-                label: 'My First dataset',
+                // label: 'My First dataset',
                 backgroundColor: window.chartColors.red,
                 borderColor: window.chartColors.red,
                 data: [
