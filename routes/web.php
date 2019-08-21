@@ -20,3 +20,5 @@ Route::get('/s', function () {
 Route::get('/upload-unstables', 'DataUploadController@uploadUnstables');
 
 Route::get('/t', 'TestPondController@testPond');
+
+Route::get('/test', 'CoilsController@testReturnCoilIds');

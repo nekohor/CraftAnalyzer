@@ -20,3 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/hoho', function (Request $request) {
     return $request;
 });
+
+Route::get('coils', "CoilsController@queryCoilIds");

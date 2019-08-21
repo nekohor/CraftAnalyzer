@@ -17,12 +17,12 @@ class Ponder
     {
     }
 
-    public function getPondData($line, $coilIds)
+    public function getPondData($coilIds)
     {
         $req = [];
         $req["requests"] = [];
         foreach($coilIds as $coilId) {
-            $coilReq = new CoilRequest($line, $coilId);
+            $coilReq = new CoilRequest($coilId);
             $req["requests"] []= $coilReq->getRequest();
         }
         $resp = $this->getSocketData($req);

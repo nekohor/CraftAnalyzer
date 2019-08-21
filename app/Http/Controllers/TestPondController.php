@@ -16,6 +16,6 @@ class TestPondController
     public function testPond()
     {
         $ponder = new Ponder();
-        return json_encode($ponder->getPondData(1580, ["M19045772M", "M19045773M", "M19045774M"]));
+        return json_encode($ponder->getPondData(["M19045772M", "M19045773M", "M19045774M"]));
     }
 }
